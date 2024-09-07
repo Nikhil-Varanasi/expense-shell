@@ -30,6 +30,7 @@ VALIDATE(){
     fi    
 }        
 
+#this is extra
 CHECK_ROOT
 
 echo "script started executing at :: $(date)" | tee -a $LOG_FILE
