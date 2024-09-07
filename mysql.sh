@@ -9,7 +9,7 @@ mkdir -p $LOGS_FOLDER
 USERID=$(id -u)
 
 R="\e[31m"
-A="\e[32m"
+G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
@@ -27,7 +27,7 @@ VALIDATE(){
         echo -e "$2 was $R not  sucessfull $N..look in to it.." | tee -a $LOG_FILE
         exit 1
     else
-        echo "$2 was $A successfull $N" | tee -a $LOG_FILE
+        echo "$2 was..$G successfull $N" | tee -a $LOG_FILE
     fi    
 }        
 
