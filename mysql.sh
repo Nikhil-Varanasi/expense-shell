@@ -27,8 +27,11 @@ VALIDATE(){
         exit 1
     else
         echo "$2 was $G successfull $N" | tee -a $LOG_FILE
-}
+    fi    
+}        
+
 CHECK_ROOT
+
 echo "script started executing at :: $(date)" | tee -a $LOG_FILE
 
 dnf install mysql-server -y
