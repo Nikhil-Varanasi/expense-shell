@@ -29,7 +29,7 @@ VALIDATE(){
     fi
 }
 
-echo "script started execution at $(date) | tee -a $LOGS_FILE
+echo "script started execution at $(date)" | tee -a $LOGS_FILE
 
 dnf install nginx -y &>>$LOG_FILE
 VALIDATE $? "installing nginx"
