@@ -31,7 +31,7 @@ VALIDATE(){
     fi
 }
 
-echo "script started execution at $(date) | tee -a $LOGS_FILE
+echo "script started execution at $(date)" | tee -a $LOGS_FILE
 
 CHECK_ROOT
 
@@ -83,4 +83,4 @@ systemctl enable backend &>>$LOG_FILE
 VALIDATE $? "Enabled backend"
 
 systemctl restart backend &>>$LOG_FILE
-"
+VALIDATE $? "Restarting system"
