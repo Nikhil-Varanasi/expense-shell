@@ -3,7 +3,6 @@ LOGS_FOLDER="/var/log/expense"
 SCRIPT_NAME="$(echo $0 | cut -d "." -f1)"
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
-
 mkdir -p $LOGS_FOLDER
 
 USERID=$(id -u)
@@ -31,10 +30,9 @@ VALIDATE(){
     fi    
 }        
 
-#this is extra
-CHECK_ROOT
-
 echo "script started executing at :: $(date)" | tee -a $LOG_FILE
+
+CHECK_ROOT
 
 dnf install mysql-server -y &>>$LOG_FILE
 VALIDATE $? "installing mysql server"
@@ -53,5 +51,4 @@ then
     VALIDATE $? "Setting UP root password"
 else
     echo -e "MySQL root password is already setup...$Y SKIPPING $N" | tee -a $LOG_FILE
-fi
-           
+fi           
